@@ -29,8 +29,11 @@ npm install
 ```sh
 npm start
 ```
-4. The app will run on http://localhost:3000 🚀
-
+4. The app will run on either
+```
+http://193.219.171.104:8080/
+http://172.19.64.1:8080/
+```
 # 🌍 Usage
 1. Enter a country name in the search bar
 2. Press Enter or click Search
