@@ -1,5 +1,5 @@
-# 📌 Country Explorer 🌍
-A simple React + TypeScript app that allows users to search for countries and view details like capital, population, currency, and languages.
+# 📌 React TypeScrypt learning 🌍
+A simple React + TypeScript app
 
 
 # 🚀 Features
