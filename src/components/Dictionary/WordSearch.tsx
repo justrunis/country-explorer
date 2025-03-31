@@ -29,7 +29,7 @@ const WordSearch: React.FC = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center mt-10">
       <h2 className="text-3xl font-bold mb-6 text-center">Word Search</h2>
       <div className="flex items-center justify-center">
         <SearchBar
