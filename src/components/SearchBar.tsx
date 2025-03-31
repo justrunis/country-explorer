@@ -22,7 +22,7 @@ const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="border p-2 rounded-lg w-64 shadow-sm"
+        className="border p-2 rounded-lg w-64 shadow-sm bg-white"
       />
       <button
         onClick={onSearch}

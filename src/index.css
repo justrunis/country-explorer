@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+body {
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    background-color: beige;
+}
