@@ -30,7 +30,7 @@ const CountrySearch: React.FC = () => {
 
   return (
     <div className="text-center mt-10">
-      <h2 className="text-3xl font-bold mb-6">🌍 Country Explorer</h2>
+      <h2 className="text-3xl font-bold mb-6">Country Explorer</h2>
       <SearchBar
         query={query}
         setQuery={setQuery}

@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Crypto } from "../utils/types";
 import axios from "axios";
@@ -11,6 +11,8 @@ export default function CryptoCurrencyPage() {
   const [crypto, setCrypto] = useState<Crypto | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCryptoById();
@@ -73,12 +75,12 @@ export default function CryptoCurrencyPage() {
 
       {crypto && (
         <div className="relative flex flex-col items-center w-full max-w-4xl px-6 py-8 mt-5 bg-white shadow-lg rounded-lg">
-          <Link
-            to="/crypto/currencies"
-            className="absolute left-4 top-4 px-3 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 transition rounded-lg shadow-sm flex items-center gap-2"
+          <button
+            className="absolute left-4 top-4 px-3 py-2 text-gray-700 transition hover:underline flex items-center gap-2 cursor-pointer"
+            onClick={() => navigate(-1)}
           >
             ← Back
-          </Link>
+          </button>
 
           <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">
             {crypto.name}
