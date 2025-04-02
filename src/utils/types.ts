@@ -79,3 +79,13 @@ export interface Crypto {
     volume24a: number;
 }
 
+export interface Character {    
+    index: number;
+    fullName: string;
+    nickname: string
+    hogwartsHouse: string;
+    interpretedBy: string
+    children: string[];
+    image: string;
+    birthdate: string;
+}

@@ -7,6 +7,7 @@ import {
   FaBars,
   FaTimes,
   FaCoins,
+  FaHatWizard,
 } from "react-icons/fa";
 
 const NavBar: React.FC = () => {
@@ -20,6 +21,7 @@ const NavBar: React.FC = () => {
           <NavItem to="/country" icon={<FaGlobe />} label="Country" />
           <NavItem to="/dictionary" icon={<FaBook />} label="Dictionary" />
           <NavItem to="/crypto" icon={<FaCoins />} label="Crypto" />
+          <NavItem to="/hp" icon={<FaHatWizard />} label="Harry Potter" />
         </ul>
 
         <button
@@ -37,6 +39,7 @@ const NavBar: React.FC = () => {
             <NavItem to="/country" icon={<FaGlobe />} label="Country" />
             <NavItem to="/dictionary" icon={<FaBook />} label="Dictionary" />
             <NavItem to="/crypto" icon={<FaCoins />} label="Crypto" />
+            <NavItem to="/hp" icon={<FaHatWizard />} label="Harry Potter" />
           </ul>
         </div>
       )}
