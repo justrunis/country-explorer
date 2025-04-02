@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFoundPage";
 import HarryPotterBooksPage from "./pages/HarryPotterBooksPage";
 import HarryPotterBookPage from "./pages/HarryPotterBookPage";
 import HarryPotterSpellsPage from "./pages/HarryPotterSpellsPage";
+import MemesPage from "./pages/MemesPage";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path="/hp/books" element={<HarryPotterBooksPage />} />
             <Route path="/hp/books/:id" element={<HarryPotterBookPage />} />
             <Route path="/hp/spells" element={<HarryPotterSpellsPage />} />
+            <Route path="/memes" element={<MemesPage />} />
           </Routes>
         </main>
       </div>

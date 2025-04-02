@@ -27,7 +27,7 @@ export default function CryptoPage() {
   };
 
   return (
-    <div className="text-center bg-blue-300 rounded-lg shadow-md p-8 flex flex-col items-center m-10">
+    <div className="text-center bg-white rounded-lg shadow-md p-8 flex flex-col items-center m-10">
       <h2 className="text-4xl font-bold mb-6 text-gray-800">
         Crypto Market Overview
       </h2>
