@@ -24,25 +24,6 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         <h3 className="font-bold text-lg text-gray-800">
           {character.fullName}
         </h3>
-
-        {character.hogwartsHouse && (
-          <span
-            className={`inline-block mt-2 px-3 py-1 text-sm font-semibold rounded-full 
-        ${
-          character.hogwartsHouse === "Gryffindor"
-            ? "bg-red-500 text-white"
-            : character.hogwartsHouse === "Slytherin"
-            ? "bg-green-600 text-white"
-            : character.hogwartsHouse === "Hufflepuff"
-            ? "bg-yellow-500 text-gray-900"
-            : character.hogwartsHouse === "Ravenclaw"
-            ? "bg-blue-500 text-white"
-            : "bg-gray-300 text-gray-800"
-        }`}
-          >
-            {character.hogwartsHouse}
-          </span>
-        )}
       </div>
     </Link>
   );

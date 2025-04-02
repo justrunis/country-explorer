@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Character } from "../utils/types";
 import axios from "axios";
 import LoadingIndicator from "../components/UI/LoadingIndicator";
@@ -10,8 +10,6 @@ export default function HarryPotterCharacterPage() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCharacter();
@@ -50,7 +48,6 @@ export default function HarryPotterCharacterPage() {
 
       {character && (
         <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg py-6 px-16">
-          {/* Character Name */}
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
             {character?.fullName || "Unknown Character"}
           </h2>

@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function HarryPotterStartingPage() {
+  useEffect(() => {
+    document.title = "Harry Potter";
+  }, []);
+
   return (
     <div className="text-center mt-10">
       <h2 className="text-4xl font-bold mb-6 text-gray-800">

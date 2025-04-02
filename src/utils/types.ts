@@ -89,3 +89,14 @@ export interface Character {
     image: string;
     birthdate: string;
 }
+
+export interface Book {
+    index: number;
+    number: number;
+    title: string;
+    originalTitle: string;
+    releaseDate: string;
+    description: string;
+    pages: number;
+    cover: string;
+}

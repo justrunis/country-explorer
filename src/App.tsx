@@ -11,6 +11,8 @@ import NavBar from "./components/UI/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HarryPotterStartingPage from "./pages/HarryPotterStartingPage";
 import NotFound from "./pages/NotFoundPage";
+import HarryPotterBooksPage from "./pages/HarryPotterBooksPage";
+import HarryPotterBookPage from "./pages/HarryPotterBookPage";
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
               path="/hp/characters/:id"
               element={<HarryPotterCharacterPage />}
             />
+            <Route path="/hp/books" element={<HarryPotterBooksPage />} />
+            <Route path="/hp/books/:id" element={<HarryPotterBookPage />} />
           </Routes>
         </main>
       </div>

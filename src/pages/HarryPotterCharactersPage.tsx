@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import Characters from "../components/HarryPotterCharacters/Characters";
+import Characters from "../components/HarryPotter/Characters";
 
 export default function HarryPotterCharactersPage() {
   useEffect(() => {
-    document.title = "Harry Potter Characters";
+    document.title = "HP Characters";
   });
 
   return <Characters />;

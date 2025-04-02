@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Character } from "../../utils/types";
 import axios from "axios";
 import LoadingIndicator from "../UI/LoadingIndicator";
