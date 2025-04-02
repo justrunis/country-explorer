@@ -17,11 +17,7 @@ const NavBar: React.FC = () => {
     <header className="bg-blue-300 shadow-md">
       <nav className="flex justify-between items-center px-6 py-4">
         <ul className="hidden md:flex space-x-6">
-          <NavItem to="/" icon={<FaHome />} label="Home" />
-          <NavItem to="/country" icon={<FaGlobe />} label="Country" />
-          <NavItem to="/dictionary" icon={<FaBook />} label="Dictionary" />
-          <NavItem to="/crypto" icon={<FaCoins />} label="Crypto" />
-          <NavItem to="/hp" icon={<FaHatWizard />} label="Harry Potter" />
+          <NavigationItems />
         </ul>
 
         <button
@@ -35,15 +31,23 @@ const NavBar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-primary text-white py-2">
           <ul className="flex flex-col items-center space-y-4">
-            <NavItem to="/" icon={<FaHome />} label="Home" />
-            <NavItem to="/country" icon={<FaGlobe />} label="Country" />
-            <NavItem to="/dictionary" icon={<FaBook />} label="Dictionary" />
-            <NavItem to="/crypto" icon={<FaCoins />} label="Crypto" />
-            <NavItem to="/hp" icon={<FaHatWizard />} label="Harry Potter" />
+            <NavigationItems />
           </ul>
         </div>
       )}
     </header>
+  );
+};
+
+const NavigationItems: React.FC = () => {
+  return (
+    <>
+      <NavItem to="/" icon={<FaHome />} label="Home" />
+      <NavItem to="/country" icon={<FaGlobe />} label="Country" />
+      <NavItem to="/dictionary" icon={<FaBook />} label="Dictionary" />
+      <NavItem to="/crypto" icon={<FaCoins />} label="Crypto" />
+      <NavItem to="/hp" icon={<FaHatWizard />} label="Harry Potter" />
+    </>
   );
 };
 
