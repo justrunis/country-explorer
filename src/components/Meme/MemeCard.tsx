@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Meme } from "../../utils/types";
 import { FaEye, FaShareAlt, FaCheck } from "react-icons/fa"; // Importing the icons
 import { Link } from "react-router-dom";
+import Modal from "../UI/Modal";
 
 interface MemeCardProps {
   meme: Meme;
@@ -9,6 +10,7 @@ interface MemeCardProps {
 
 const MemeCard: React.FC<MemeCardProps> = ({ meme }) => {
   const [copied, setCopied] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function copyToClipboard(text: string) {
     if (window.isSecureContext && navigator.clipboard) {
@@ -40,11 +42,17 @@ const MemeCard: React.FC<MemeCardProps> = ({ meme }) => {
       key={meme.id}
       className="flex flex-col justify-between bg-white rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
     >
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <div className="flex items-center justify-center">
+          <img src={meme.url} alt={meme.name} />
+        </div>
+      </Modal>
+
       <div className="relative w-full h-64 bg-gray-200 overflow-hidden">
         <img
           src={meme.url}
           alt={meme.name}
-          className="w-full h-full object-cover rounded-t-2xl"
+          className="w-full h-full object-fit rounded-t-2xl"
         />
       </div>
 
@@ -63,13 +71,13 @@ const MemeCard: React.FC<MemeCardProps> = ({ meme }) => {
       </div>
 
       <div className="flex justify-between items-center px-4 py-2 border-t-2 border-gray-100 bg-gray-50">
-        <Link
-          to={meme.url}
+        <button
+          onClick={() => setIsOpen(true)}
           className="flex items-center text-sm text-blue-500 hover:text-blue-700 gap-1 cursor-pointer"
         >
           <FaEye className="text-lg" />
           View Meme
-        </Link>
+        </button>
         <button
           className={`flex items-center text-sm gap-1 cursor-pointer ${
             copied ? "text-green-500" : "text-blue-500 hover:text-blue-700"
