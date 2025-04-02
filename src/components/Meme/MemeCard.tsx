@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Meme } from "../../utils/types";
-import { FaEye, FaShareAlt, FaCheck } from "react-icons/fa"; // Importing the icons
-import { Link } from "react-router-dom";
+import { FaEye, FaShareAlt, FaCheck } from "react-icons/fa";
 import Modal from "../UI/Modal";
 
 interface MemeCardProps {

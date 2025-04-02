@@ -9,8 +9,6 @@ export default function HomePage() {
     <div className="flex flex-col items-center justify-center bg-blue-300 p-16 rounded-lg shadow-lg m-10">
       <h1 className="text-4xl font-semibold text-gray-800 mb-4">Home Page</h1>
 
-      {/* Background Gif Section */}
-
       <div className="flex flex-col bg-white p-4 rounded-lg shadow-lg text-center gap-4 my-5">
         <h3 className="text-lg text-gray-600">
           Welcome to this awesome website!
@@ -22,7 +20,6 @@ export default function HomePage() {
         />
       </div>
 
-      {/* GIFs inside content */}
       <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
         <div className="bg-white p-4 rounded-lg shadow-lg text-center">
           <h3 className="font-semibold text-xl mb-2">Fun and Animations</h3>
