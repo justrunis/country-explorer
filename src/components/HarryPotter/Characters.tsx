@@ -29,7 +29,7 @@ const Characters: React.FC = () => {
   };
 
   return (
-    <div className="text-center mt-10">
+    <div className="text-center m-10">
       <h2 className="text-3xl font-bold mb-6 text-center">
         Harry Potter Characters
       </h2>

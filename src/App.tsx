@@ -13,6 +13,7 @@ import HarryPotterStartingPage from "./pages/HarryPotterStartingPage";
 import NotFound from "./pages/NotFoundPage";
 import HarryPotterBooksPage from "./pages/HarryPotterBooksPage";
 import HarryPotterBookPage from "./pages/HarryPotterBookPage";
+import HarryPotterSpellsPage from "./pages/HarryPotterSpellsPage";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             />
             <Route path="/hp/books" element={<HarryPotterBooksPage />} />
             <Route path="/hp/books/:id" element={<HarryPotterBookPage />} />
+            <Route path="/hp/spells" element={<HarryPotterSpellsPage />} />
           </Routes>
         </main>
       </div>

@@ -7,7 +7,7 @@ export default function HarryPotterStartingPage() {
   }, []);
 
   return (
-    <div className="text-center mt-10">
+    <div className="text-center m-10">
       <h2 className="text-4xl font-bold mb-6 text-gray-800">
         Harry Potter Information
       </h2>
@@ -20,7 +20,7 @@ export default function HarryPotterStartingPage() {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-lg mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 m-10 max-w-lg mx-auto">
         <Link
           to="/hp/characters"
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105"

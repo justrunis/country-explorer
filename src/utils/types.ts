@@ -84,6 +84,7 @@ export interface Character {
     fullName: string;
     nickname: string
     hogwartsHouse: string;
+    houseIcon: string;
     interpretedBy: string
     children: string[];
     image: string;
@@ -99,4 +100,10 @@ export interface Book {
     description: string;
     pages: number;
     cover: string;
+}
+
+export interface Spell {
+    index: number;
+    spell: string;
+    use: string;
 }

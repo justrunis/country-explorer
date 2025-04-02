@@ -23,7 +23,10 @@ export default function HarryPotterCharacterPage() {
         `https://potterapi-fedeperin.vercel.app/en/characters?index=${id}`
       );
       document.title = response.data?.fullName || "Unknown";
+      console.log(response.data);
+
       setCharacter(response.data);
+      fetchHouseIconByHouse(response.data.hogwartsHouse);
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(err.response?.data?.message || "Failed to fetch character");
@@ -34,6 +37,33 @@ export default function HarryPotterCharacterPage() {
       }
     }
     setIsLoading(false);
+  };
+
+  const fetchHouseIconByHouse = async (house: string) => {
+    console.log(house);
+    try {
+      const response = await axios.get(
+        `https://potterapi-fedeperin.vercel.app/en/houses?search=${house}`
+      );
+      console.log(response.data[0]?.emoji);
+      setCharacter((prevCharacter) => {
+        if (!prevCharacter) return null;
+
+        return {
+          ...prevCharacter,
+          houseIcon: response.data[0]?.emoji || "",
+        };
+      });
+      console.log(character);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.message || "Failed to fetch character");
+      } else if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    }
   };
 
   return (
@@ -72,25 +102,15 @@ export default function HarryPotterCharacterPage() {
                 </div>
               )}
 
-              {character?.birthdate && (
-                <div className="flex flex-col bg-gray-100 p-3 rounded-lg gap-2">
+              {character?.hogwartsHouse && (
+                <div className="flex flex-col items-center bg-gray-100 p-3 rounded-lg gap-2">
                   <span className="font-bold">Hogwarts House</span>
-                  <p
-                    className={`p-1 text-sm font-semibold rounded-full 
-          ${
-            character.hogwartsHouse === "Gryffindor"
-              ? "bg-red-500 text-white"
-              : character.hogwartsHouse === "Slytherin"
-              ? "bg-green-600 text-white"
-              : character.hogwartsHouse === "Hufflepuff"
-              ? "bg-yellow-500 text-gray-900"
-              : character.hogwartsHouse === "Ravenclaw"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-800"
-          }`}
-                  >
-                    {character.hogwartsHouse}
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <p>{character.hogwartsHouse}</p>
+                    {character.houseIcon && (
+                      <span className="text-xl">{character.houseIcon}</span>
+                    )}
+                  </div>
                 </div>
               )}
 

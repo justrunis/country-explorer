@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import LoadingIndicator from "../UI/LoadingIndicator";
-import { Book } from "../../utils/types";
-import BookCard from "./BookCard";
+import { Spell } from "../../utils/types";
+import SpellCard from "./SpellsCard";
 
-const Books: React.FC = () => {
-  const [books, setBooks] = useState<Book[] | null>(null);
+const Spells: React.FC = () => {
+  const [spells, setSpells] = useState<Spell[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchBooks();
+    fetchSpells();
   }, []);
 
-  const fetchBooks = async () => {
+  const fetchSpells = async () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        "https://potterapi-fedeperin.vercel.app/en/books"
+        "https://potterapi-fedeperin.vercel.app/en/spells"
       );
-      setBooks(response.data);
+      setSpells(response.data);
     } catch (err) {
       if (axios.isAxiosError(err)) {
         setError(err.response?.data?.message || "Failed to fetch character");
@@ -35,7 +35,7 @@ const Books: React.FC = () => {
   return (
     <div className="text-center m-10">
       <h2 className="text-3xl font-bold mb-6 text-center">
-        Harry Potter Books
+        Harry Potter Spells
       </h2>
 
       {isLoading && (
@@ -45,10 +45,11 @@ const Books: React.FC = () => {
       )}
 
       {error && <p className="mt-4 text-red-500">{error}</p>}
-      {books && (
+
+      {spells && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {books.map((book) => (
-            <BookCard book={book} />
+          {spells.map((spell) => (
+            <SpellCard spell={spell} />
           ))}
         </div>
       )}
@@ -56,4 +57,4 @@ const Books: React.FC = () => {
   );
 };
 
-export default Books;
+export default Spells;
